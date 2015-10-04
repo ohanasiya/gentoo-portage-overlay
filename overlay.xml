@@ -9,6 +9,6 @@
       <name>Ohanasiya</name>
       <email>master@ohanasiya.net</email>
     </owner>
-    <source type="git">git://github.com/ohanasiya/gentoo-portage-overlays.git</source>
+    <source type="git">git://github.com/ohanasiya/gentoo-portage-overlay.git</source>
   </repo>
 </repositories>
