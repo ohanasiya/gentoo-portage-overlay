@@ -22,7 +22,7 @@ MODULES=${IUSE//-/}
 DEPEND="( =gnome-extra/nemo-2.6* )
     fileroller? ( app-arch/file-roller )
     python? ( dev-lang/python dev-python/pygobject )
-    rabbitvcs? ( dev-vcs/rabbitvcs >=gnome-extra/nemo-1.1.2 >=dev-python/dbus-python-1* )"
+    rabbitvcs? ( dev-vcs/rabbitvcs >=gnome-extra/nemo-1.1.2 >=dev-python/dbus-python-1.2.0 )"
 #    rabbitvcs? ( dev-vcs/rabbitvcs dev-vcs/git dev-vcs/subversion dev-vcs/cvs dev-util/meld dev-python/pygtk dev-python/pygobject dev-python/pysvn dev-python/configobj dev-python/simplejson dev-python/dulwich dev-python/dbus-python )"
 
 RDEPEND="${DEPEND}"
@@ -40,13 +40,13 @@ install_module_rabbitvcs()
   local vbd=${D}/usr/share/nemo-python/extensions
   local vbf=RabbitVCS.py
   local vsd=${D}/usr/bin
-  local vsf=nemo.sh
+  local vsf=nemo-extensions.sh
   mkdir -p  ${vbd}
   mkdir -p  ${vsd}
   cp ${vbf} ${vbd}/
   chmod a+r ${vbd}/${vbf}
   echo "nemo -q ; sleep 1 ; pgrep -f service.py | xargs kill 2>&1 >/dev/null ; nohup nemo 2>&1 >/dev/null &" > ${vsd}/${vsf}
-  chmod 751                                                                                    ${vsd}/${vsf}
+  chmod 751                                                                                                    ${vsd}/${vsf}
   einfo "!!!!!!!!!!!!!!!!!!!!!"
   einfo "!!!!! ATTENTION !!!!!"
   einfo "You must type ${vsf} at first if you want to use nemo with RabbitVCS extension."
