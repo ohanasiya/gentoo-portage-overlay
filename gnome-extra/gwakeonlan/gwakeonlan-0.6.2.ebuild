@@ -5,14 +5,15 @@
 EAPI=4
 inherit distutils
 
-
 DESCRIPTION="gWakeOnLan - Wake up your machines using Wake on LAN"
 HOMEPAGE="http://www.muflone.com/gwakeonlan/"
-SRC_URI="https://github.com/muflone/gwakeonlan/releases/download/0.6.2/gwakeonlan-0.6.2.tar.gz"
+SRC_URI="https://github.com/muflone/gwakeonlan/releases/download/${PV}/gwakeonlan-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
+
+
 
 # =dev-python/python-distutils-extra-2*
 # =dev-python/pygobject-2*
@@ -31,10 +32,18 @@ RDEPEND="${DEPEND}
 #	unpack   ${A}
 #}
 
-#src_install()
-#{
-#	cp -r usr ${D}/
-#}
+src_install()
+{
+    python2 setup.py install --root ${D}
+}
+pkg_postinst()
+{
+    return
+}
+pkg_postrm()
+{
+    return
+}
 
 #post_install()
 #{

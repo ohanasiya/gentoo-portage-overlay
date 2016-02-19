@@ -33,10 +33,12 @@ src_unpack()
   tar xf ${DISTDIR}/${A} || die
 }
 
+
 src_prepare()
 {
   sed -i -e "s/QCleanlooksStyle/QProxyStyle/g" src/robomongo/gui/AppStyle.h
 }
+
 
 src_configure()
 {
@@ -46,12 +48,14 @@ src_configure()
   popd
 }
 
+
 src_compile()
 {
   pushd target
     make || die
   popd
 }
+
 
 src_install()
 {
