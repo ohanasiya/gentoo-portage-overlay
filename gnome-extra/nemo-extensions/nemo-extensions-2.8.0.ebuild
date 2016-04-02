@@ -6,7 +6,7 @@ EAPI=5
 inherit autotools python readme.gentoo
 
 
-NEMO_VER="2.6"
+NEMO_VER="2.8"
 DESCRIPTION="Extensions for Cinnamon's file-manager nemo"
 HOMEPAGE="https://github.com/linuxmint/nemo-extensions"
 SRC_URI="https://github.com/linuxmint/nemo-extensions/archive/${NEMO_VER}.x.tar.gz"
